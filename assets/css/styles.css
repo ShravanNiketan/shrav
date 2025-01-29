@@ -1,0 +1,269 @@
+/* CSS Variables for theming */
+:root {
+    /* Brand Colors */
+    --shrav-blue: #37B5FE;
+    --icon-red: #FE1817;
+    --online-purple: #8C52FF;
+    --icon-green: #7DD856;
+    
+    /* Dark Theme Colors (Default) */
+    --primary-bg: #060606;
+    --secondary-bg: #0a0a0a;
+    --card-bg: #111111;
+    --text-primary: #ffffff;
+    --text-secondary: rgba(255, 255, 255, 0.8);
+    --button-text: #ffffff;
+    --border-color: rgba(255, 255, 255, 0.1);
+    
+    /* Interactive Elements */
+    --accent-primary: var(--shrav-blue);
+    --accent-secondary: var(--online-purple);
+    --success-accent: var(--icon-green);
+    
+    /* Theme Switcher Colors */
+    --select-bg: #111111;
+    --select-text: #ffffff;
+    --select-border: var(--border-color);
+}
+
+/* Light theme variables */
+[data-theme="light"] {
+    --primary-bg: #ffffff;
+    --secondary-bg: #f8f9fa;
+    --card-bg: #ffffff;
+    --text-primary: #060606;
+    --text-secondary: rgba(6, 6, 6, 0.7);
+    /* Override button text color in light mode to always be white */
+    --button-text: #ffffff;
+    --border-color: rgba(6, 6, 6, 0.1);
+    --select-bg: #ffffff;
+    --select-text: #060606;
+    --select-border: var(--border-color);
+}
+
+/* Theme switcher styles */
+.theme-switcher {
+    position: relative;
+    margin-left: 2rem;
+}
+
+.theme-select {
+    appearance: none;
+    -webkit-appearance: none;
+    padding: 0.5rem 2rem 0.5rem 1rem;
+    background-color: var(--select-bg);
+    color: var(--select-text);
+    border: 1px solid var(--select-border);
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.theme-select:hover {
+    border-color: var(--accent-primary);
+}
+
+.theme-select:focus {
+    outline: none;
+    border-color: var(--accent-primary);
+    box-shadow: 0 0 0 2px rgba(55, 181, 254, 0.2);
+}
+
+/* Custom dropdown arrow */
+.theme-switcher::after {
+    content: "";
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid var(--text-secondary);
+    pointer-events: none;
+}
+
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: var(--text-primary);
+    background-color: var(--primary-bg);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Header styles */
+#main-header {
+    background-color: var(--secondary-bg);
+    color: var(--text-primary);
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+#main-nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--accent-primary);
+    transition: color 0.3s ease;
+}
+
+#nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+#nav-menu a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+#nav-menu a:hover {
+    color: var(--accent-primary);
+}
+
+/* Hero section */
+#hero-section {
+    background-color: var(--secondary-bg);
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+#hero-title {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(45deg, var(--shrav-blue), var(--online-purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#hero-description {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto 2rem;
+}
+
+#cta-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color: var(--accent-secondary);
+    color: var(--button-text);
+    text-decoration: none;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+#cta-button:hover {
+    background-color: var(--accent-primary);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(55, 181, 254, 0.3);
+}
+
+#cta-button:active {
+    background-color: var(--success-accent);
+    transform: translateY(0);
+}
+
+/* Main content */
+#main-content {
+    width: 100%;
+    background-color: var(--primary-bg);
+    padding: 4rem 0;
+}
+
+/* Container for the features grid */
+#features-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+#feature-1,
+#feature-2,
+#feature-3 {
+    text-align: center;
+    padding: 2rem;
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    border: 1px solid var(--border-color);
+    position: relative;
+    overflow: hidden;
+}
+
+#feature-1:hover,
+#feature-2:hover,
+#feature-3:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-primary);
+}
+
+#feature-1:hover::after,
+#feature-2:hover::after,
+#feature-3:hover::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(to right, var(--accent-primary), var(--success-accent));
+}
+
+#feature-1-title,
+#feature-2-title,
+#feature-3-title {
+    margin-bottom: 1rem;
+    color: var(--accent-primary);
+}
+
+#feature-1-description,
+#feature-2-description,
+#feature-3-description {
+    color: var(--text-secondary);
+}
+
+/* Footer */
+#main-footer {
+    background-color: var(--secondary-bg);
+    color: var(--text-secondary);
+    padding: 2rem 0;
+    text-align: center;
+    border-top: 1px solid var(--border-color);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    #nav-menu {
+        display: none;
+    }
+
+    #hero-title {
+        font-size: 2rem;
+    }
+}
