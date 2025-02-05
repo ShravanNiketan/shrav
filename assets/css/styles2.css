@@ -50,10 +50,10 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     z-index: -1;
     background: linear-gradient(to bottom, #0a192f 0%, #000000 100%);
-    pointer-events: none;
+    pointer-events: auto;
 }
 
 /* Theme switcher styles */
@@ -294,4 +294,9 @@
     #hero-title {
         font-size: 2rem;
     }
+}
+
+html, body {
+    background-color: #000000; /* Or your darkest gradient color */
+    min-height: 100vh;
 }
