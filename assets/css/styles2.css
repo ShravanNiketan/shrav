@@ -8,7 +8,9 @@
     
     /* Dark Theme Colors (Default) */
     --primary-bg: #060606;
+    --primary-bg-rgb: 6, 6, 6;
     --secondary-bg: #0a0a0a;
+    --secondary-bg-rgb: 10, 10, 10;
     --card-bg: #111111;
     --text-primary: #ffffff;
     --text-secondary: rgba(255, 255, 255, 0.8);
@@ -29,16 +31,29 @@
 /* Light theme variables */
 [data-theme="light"] {
     --primary-bg: #ffffff;
+    --primary-bg-rgb: 255, 255, 255;
     --secondary-bg: #f8f9fa;
+    --secondary-bg-rgb: 248, 249, 250;
     --card-bg: #ffffff;
     --text-primary: #060606;
     --text-secondary: rgba(6, 6, 6, 0.7);
-    /* Override button text color in light mode to always be white */
     --button-text: #ffffff;
     --border-color: rgba(6, 6, 6, 0.1);
     --select-bg: #ffffff;
     --select-text: #060606;
     --select-border: var(--border-color);
+}
+
+/* Particles.js Container */
+#particles-js {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: linear-gradient(to bottom, #0a192f 0%, #000000 100%);
+    pointer-events: none;
 }
 
 /* Theme switcher styles */
@@ -96,13 +111,17 @@
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
     color: var(--text-primary);
-    background-color: var(--primary-bg);
-    transition: background-color 0.3s ease, color 0.3s ease;
+    background: transparent;
+    transition: color 0.3s ease;
 }
 
 /* Header styles */
 #main-header {
-    background-color: var(--secondary-bg);
+    /* position: sticky; */
+    /* top: 0px; */
+    background-color: rgba(var(--secondary-bg-rgb), 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     color: var(--text-primary);
     padding: 1rem 0;
     border-bottom: 1px solid var(--border-color);
@@ -143,7 +162,9 @@
 
 /* Hero section */
 #hero-section {
-    background-color: var(--secondary-bg);
+    background-color: rgba(var(--secondary-bg-rgb), 0.3);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(5px);
     padding: 4rem 2rem;
     text-align: center;
 }
@@ -189,7 +210,7 @@
 /* Main content */
 #main-content {
     width: 100%;
-    background-color: var(--primary-bg);
+    background: transparent;
     padding: 4rem 0;
 }
 
@@ -209,11 +230,13 @@
 #feature-3 {
     text-align: center;
     padding: 2rem;
-    background-color: var(--card-bg);
+    background-color: rgba(var(--secondary-bg-rgb), 0.4);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     border-radius: 10px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
     transition: all 0.3s ease;
-    border: 1px solid var(--border-color);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     position: relative;
     overflow: hidden;
 }
@@ -252,7 +275,9 @@
 
 /* Footer */
 #main-footer {
-    background-color: var(--secondary-bg);
+    /* background-color: rgba(var(--secondary-bg-rgb), 0.8); */
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
     color: var(--text-secondary);
     padding: 2rem 0;
     text-align: center;
