@@ -1,7 +1,7 @@
 particlesJS('particles-js', {
     "particles": {
       "number": {
-        "value": 300,
+        "value": 450,
         "density": {
           "enable": true,
           "value_area": 800
@@ -42,8 +42,8 @@ particlesJS('particles-js', {
         "direction": "none",
         "random": true,
         "straight": false,
-        "out_mode": "out",
-        "bounce": false,
+        "out_mode": "bounce",
+        "bounce": true,
         "attract": {
           "enable": true,
           "rotateX": 600,
@@ -52,7 +52,7 @@ particlesJS('particles-js', {
       }
     },
     "interactivity": {
-      "detect_on": "canvas",
+      "detect_on": "window",
       "events": {
         "onhover": {
           "enable": true,
@@ -73,8 +73,11 @@ particlesJS('particles-js', {
           "speed": 1
         },
         "repulse": {
-          "distance": 150,
-          "duration": 0.4
+          "distance": 200,          // Increased base distance
+          "duration": 1.2,          // Longer duration for smoother effect
+          "speed": 1,               // Control the repulsion speed
+          "factor": 100,            // Strength of the repulsion
+          "easing": "ease-out-quad" // Makes the movement more natural
         }
       }
     },
