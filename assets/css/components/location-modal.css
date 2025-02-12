@@ -1,0 +1,219 @@
+/* Location Modal Styles */
+.location-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1100;
+    backdrop-filter: blur(5px);
+}
+
+.location-modal.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.location-modal-content {
+    background-color: var(--card-bg);
+    padding: 2rem;
+    border-radius: 10px;
+    max-width: 500px;
+    width: 90%;
+    position: relative;
+    border: 1px solid var(--border-color);
+}
+
+.location-modal-header {
+    margin-bottom: 1.5rem;
+}
+
+.location-modal-title {
+    font-size: 1.5rem;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.location-modal-subtitle {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.location-search {
+    margin-bottom: 1.5rem;
+}
+
+.location-search-input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    background-color: var(--secondary-bg);
+    color: var(--text-primary);
+    font-size: 1rem;
+}
+
+.location-search-input:focus {
+    outline: none;
+    border-color: var(--accent-primary);
+    box-shadow: 0 0 0 2px rgba(55, 181, 254, 0.2);
+}
+
+.location-results {
+    max-height: 300px;
+    overflow-y: auto;
+    margin-bottom: 1.5rem;
+}
+
+.location-result-item {
+    padding: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.location-result-item:hover {
+    border-color: var(--accent-primary);
+    background-color: rgba(var(--secondary-bg-rgb), 0.5);
+}
+
+.location-result-item:last-child {
+    margin-bottom: 0;
+}
+
+.location-result-name {
+    font-weight: bold;
+    color: var(--text-primary);
+    margin-bottom: 0.25rem;
+}
+
+.location-result-details {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.location-distance {
+    color: var(--accent-primary);
+    font-size: 0.8rem;
+    margin-left: 0.5rem;
+}
+
+.location-modal-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.location-modal-button {
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    text-align: center;
+}
+
+.location-modal-device {
+    background-color: var(--accent-primary);
+    border: none;
+    color: var(--button-text);
+}
+
+.location-modal-device:hover {
+    background-color: var(--accent-secondary);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(55, 181, 254, 0.3);
+}
+
+.location-modal-ip {
+    background-color: var(--secondary-bg);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+}
+
+.location-modal-ip:hover {
+    background-color: var(--card-bg);
+    border-color: var(--accent-primary);
+}
+
+.location-modal-cancel {
+    background-color: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+}
+
+.location-modal-cancel:hover {
+    border-color: var(--text-primary);
+    color: var(--text-primary);
+}
+
+.location-error {
+    color: var(--icon-red);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    display: none;
+}
+
+.location-error.active {
+    display: block;
+}
+
+/* Loading state */
+.location-loading {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.location-loading.active {
+    display: flex;
+}
+
+.location-loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid var(--border-color);
+    border-top-color: var(--accent-primary);
+    border-radius: 50%;
+    animation: location-spinner 1s linear infinite;
+}
+
+@keyframes location-spinner {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .location-modal-content {
+        width: 95%;
+        padding: 1.5rem;
+    }
+
+    .location-results {
+        max-height: 250px;
+    }
+}
+
+/* Hide buttons when disabled or permission denied */
+.location-modal-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.location-modal-button[style*="display: none"] {
+    display: none !important;
+}

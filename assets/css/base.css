@@ -1,121 +1,6 @@
-/* CSS Variables for theming */
-:root {
-    /* Brand Colors */
-    --shrav-blue: #37B5FE;
-    --icon-red: #FE1817;
-    --online-purple: #8C52FF;
-    --icon-green: #7DD856;
-    
-    /* Dark Theme Colors (Default) */
-    --primary-bg: #060606;
-    --primary-bg-rgb: 6, 6, 6;
-    --secondary-bg: #0a0a0a;
-    --secondary-bg-rgb: 10, 10, 10;
-    --card-bg: #111111;
-    --text-primary: #ffffff;
-    --text-secondary: rgba(255, 255, 255, 0.8);
-    --button-text: #ffffff;
-    --border-color: rgba(255, 255, 255, 0.1);
-    
-    /* Interactive Elements */
-    --accent-primary: var(--shrav-blue);
-    --accent-secondary: var(--online-purple);
-    --success-accent: var(--icon-green);
-    
-    /* Theme Switcher Colors */
-    --select-bg: #111111;
-    --select-text: #ffffff;
-    --select-border: var(--border-color);
-}
+/* Base structural styles and layouts */
 
-/* Light theme variables */
-[data-theme="light"] {
-    --primary-bg: #ffffff;
-    --primary-bg-rgb: 255, 255, 255;
-    --secondary-bg: #f8f9fa;
-    --secondary-bg-rgb: 248, 249, 250;
-    --card-bg: #ffffff;
-    --text-primary: #060606;
-    --text-secondary: rgba(6, 6, 6, 0.7);
-    --button-text: #ffffff;
-    --border-color: rgba(6, 6, 6, 0.1);
-    --select-bg: #ffffff;
-    --select-text: #060606;
-    --select-border: var(--border-color);
-}
-
-/* Particles.js Container */
-#particles-js {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    z-index: -1;
-    background: linear-gradient(to bottom, #0a192f 0%, #000000 100%);
-    pointer-events: auto;
-}
-
-/* Theme switcher styles */
-.theme-switcher {
-    position: relative;
-    margin-left: 0rem;
-}
-
-.theme-select {
-    appearance: none;
-    -webkit-appearance: none;
-    padding: 0.5rem 2rem 0.5rem 1rem;
-    background-color: var(--select-bg);
-    color: var(--select-text);
-    border: 1px solid var(--select-border);
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 0.9rem;
-    transition: all 0.3s ease;
-}
-
-.theme-select:hover {
-    border-color: var(--accent-primary);
-}
-
-.theme-select:focus {
-    outline: none;
-    border-color: var(--accent-primary);
-    box-shadow: 0 0 0 2px rgba(55, 181, 254, 0.2);
-}
-
-/* Custom dropdown arrow */
-.theme-switcher::after {
-    content: "";
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 0;
-    height: 0;
-    border-left: 5px solid transparent;
-    border-right: 5px solid transparent;
-    border-top: 5px solid var(--text-secondary);
-    pointer-events: none;
-}
-
-/* Reset and base styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-#body {
-    font-family: 'Arial', sans-serif;
-    line-height: 1.6;
-    color: var(--text-primary);
-    background: transparent;
-    transition: color 0.3s ease;
-}
-
-/* Header styles */
+/* Header */
 #main-header {
     position: sticky;
     top: 0px;
@@ -215,7 +100,7 @@
     padding: 4rem 0;
 }
 
-/* Container for the features grid */
+/* Features grid */
 #features-grid {
     max-width: 1200px;
     margin: 0 auto;
@@ -276,7 +161,6 @@
 
 /* Footer */
 #main-footer {
-    /* background-color: rgba(var(--secondary-bg-rgb), 0.8); */
     backdrop-filter: blur(3px);
     -webkit-backdrop-filter: blur(3px);
     color: var(--text-secondary);
@@ -285,18 +169,20 @@
     border-top: 1px solid var(--border-color);
 }
 
-/* Responsive design */
-@media (max-width: 768px) {
-    #nav-menu {
-        display: none;
-    }
-
-    #hero-title {
-        font-size: 2rem;
-    }
+/* Particles.js Container */
+#particles-js {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+    pointer-events: auto;
 }
 
-html, body {
-    background-color: #000000; /* Or your darkest gradient color */
-    min-height: 100vh;
+/* Global transition styles */
+* {
+    transition-property: background-color, border-color, color, box-shadow, transform;
+    transition-duration: 0.3s;
+    transition-timing-function: ease;
 }

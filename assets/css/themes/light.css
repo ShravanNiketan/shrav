@@ -1,0 +1,25 @@
+/* Light theme color variables */
+[data-theme="light"] {
+    /* Base colors */
+    --primary-bg: #ffffff;
+    --primary-bg-rgb: 255, 255, 255;
+    --secondary-bg: #f8f9fa;
+    --secondary-bg-rgb: 248, 249, 250;
+    --card-bg: #ffffff;
+    
+    /* Text colors */
+    --text-primary: #060606;
+    --text-secondary: rgba(6, 6, 6, 0.7);
+    --button-text: #ffffff;
+    
+    /* Borders and backgrounds */
+    --border-color: rgba(6, 6, 6, 0.1);
+    --select-bg: #ffffff;
+    --select-text: #060606;
+    --select-border: var(--border-color);
+}
+
+/* Light theme particles background */
+[data-theme="light"] #particles-js {
+    background: radial-gradient(circle at center, rgb(186, 186, 189) 0%, rgb(255, 255, 255) 100%);
+}

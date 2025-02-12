@@ -1,0 +1,50 @@
+/* Root variables and default dark theme */
+:root {
+    /* Brand Colors */
+    --shrav-blue: #37B5FE;
+    --icon-red: #FE1817;
+    --online-purple: #8C52FF;
+    --icon-green: #7DD856;
+    
+    /* Dark Theme Colors (Default) */
+    --primary-bg: #060606;
+    --primary-bg-rgb: 6, 6, 6;
+    --secondary-bg: #0a0a0a;
+    --secondary-bg-rgb: 10, 10, 10;
+    --card-bg: #111111;
+    --text-primary: #ffffff;
+    --text-secondary: rgba(255, 255, 255, 0.8);
+    --button-text: #ffffff;
+    --border-color: rgba(255, 255, 255, 0.1);
+    
+    /* Interactive Elements */
+    --accent-primary: var(--shrav-blue);
+    --accent-secondary: var(--online-purple);
+    --success-accent: var(--icon-green);
+    
+    /* Theme Switcher Colors */
+    --select-bg: #111111;
+    --select-text: #ffffff;
+    --select-border: var(--border-color);
+}
+
+/* Ensure dark theme explicitly sets these variables when selected */
+[data-theme="dark"] {
+    --primary-bg: #060606;
+    --primary-bg-rgb: 6, 6, 6;
+    --secondary-bg: #0a0a0a;
+    --secondary-bg-rgb: 10, 10, 10;
+    --card-bg: #111111;
+    --text-primary: #ffffff;
+    --text-secondary: rgba(255, 255, 255, 0.8);
+    --button-text: #ffffff;
+    --border-color: rgba(255, 255, 255, 0.1);
+    --select-bg: #111111;
+    --select-text: #ffffff;
+    --select-border: var(--border-color);
+}
+
+/* Dark theme particles background */
+[data-theme="dark"] #particles-js {
+    background: radial-gradient(circle at center, #0a0619 0%, #000000 100%);
+}
