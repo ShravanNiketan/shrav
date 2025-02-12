@@ -4,7 +4,7 @@
 @import './base.css';
 
 /* Theme system */
-@import './themes/_variables.css';
+@import url('./themes/_variables.css');
 @import './themes/light.css';
 /* Future theme imports would go here */
 /* @import 'themes/custom-themes/future-theme.css'; */
