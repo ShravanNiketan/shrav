@@ -4,23 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shrav Online</title>
-    <!-- <link rel="stylesheet" href="assets/css/styles.css"> -->
-    <link rel="stylesheet" href="assets/css/styles2.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script src="assets/js/space-background.js" defer></script>
-    <script src="assets/js/theme-switcher.js" defer></script>
 </head>
 <body id="body">
     <div id="particles-js"></div>
     <header id="main-header">
         <nav id="main-nav">
-            <div id="theme-switcher" class="theme-switcher">
-                <select id="theme-select" class="theme-select">
-                    <option value="light">Light Mode</option>
-                    <option value="dark">Dark Mode</option>
-                    <option value="system">System Mode</option>
-                    <option value="auto">Auto (Time-based)</option>
-                </select>
+            <div class="theme-controls">
+                <div id="theme-switcher" class="theme-switcher">
+                    <select id="theme-select" class="theme-select">
+                        <option value="">Select Theme</option>
+                        <option value="light">Light</option>
+                        <option value="dark">Dark</option>
+                        <option value="system">System</option>
+                        <option value="natural">Natural</option>
+                    </select>
+                    <div id="theme-location" class="theme-location">
+                        <span id="location-display">Location not set</span>
+                        <button id="change-location" class="location-change-btn">Change</button>
+                    </div>
+                </div>
             </div>
             <div id="logo" class="logo">Shrav Online</div>
             <ul id="nav-menu" class="nav-links">
@@ -55,8 +59,51 @@
         </div>
     </main>
 
+    <!-- Location Selection Modal -->
+    <div id="location-modal" class="location-modal">
+        <div class="location-modal-content">
+            <div class="location-modal-header">
+                <h2 class="location-modal-title">Set Your Location</h2>
+                <p class="location-modal-subtitle">Choose your location for natural transitions based on sunrise and sunset times.</p>
+            </div>
+            <div class="location-search">
+                <input type="text" id="location-search-input" class="location-search-input" 
+                    placeholder="Search for a city..." autocomplete="off">
+                <div id="location-error" class="location-error"></div>
+            </div>
+            <div id="location-results" class="location-results"></div>
+            <div id="location-loading" class="location-loading">
+                <div class="location-loading-spinner"></div>
+            </div>
+            <div class="location-modal-actions">
+                <button id="location-modal-device" class="location-modal-button location-modal-device">
+                    Use Device Location
+                </button>
+                <button id="location-modal-ip" class="location-modal-button location-modal-ip">
+                    Use Approximate Location (IP)
+                </button>
+                <button id="location-modal-cancel" class="location-modal-button location-modal-cancel">
+                    Cancel
+                </button>
+            </div>
+        </div>
+    </div>
+
     <footer id="main-footer">
         <p id="copyright">© 2025 Shrav Online. All rights reserved.</p>
     </footer>
+
+    <!-- Scripts -->
+    <script src="assets/js/config/api-config.js"></script>
+    <script src="assets/js/utils/time-utils.js"></script>
+    <script src="assets/js/utils/dom-utils.js"></script>
+    <script src="assets/js/services/storage-service.js"></script>
+    <script src="assets/js/services/api-service.js"></script>
+    <script src="assets/js/services/location-service.js"></script>
+    <script src="assets/js/components/toast.js"></script>
+    <script src="assets/js/components/theme-switcher.js"></script>
+    <script src="assets/js/components/location-modal.js"></script>
+    <script src="assets/js/components/natural-theme.js"></script>
+    <script src="assets/js/space-background.js"></script>
 </body>
 </html>
