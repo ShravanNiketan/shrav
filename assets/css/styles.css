@@ -1,17 +1,17 @@
 /* Main stylesheet - imports all components */
 
 /* Base styles and layouts */
-@import 'base.css';
+@import './base.css';
 
 /* Theme system */
-@import 'themes/_variables.css';
-@import 'themes/light.css';
+@import './themes/_variables.css';
+@import './themes/light.css';
 /* Future theme imports would go here */
 /* @import 'themes/custom-themes/future-theme.css'; */
 
 /* Component styles */
-@import 'components/theme-switcher.css';
-@import 'components/location-modal.css';
+@import './components/theme-switcher.css';
+@import './components/location-modal.css';
 
 /* Reset styles */
 * {
