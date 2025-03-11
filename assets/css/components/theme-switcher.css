@@ -1,0 +1,62 @@
+/* Theme switcher styles */
+.theme-switcher {
+    position: relative;
+    margin-left: 0rem;
+}
+
+.theme-select {
+    appearance: none;
+    -webkit-appearance: none;
+    padding: 0.5rem 2rem 0.5rem 1rem;
+    background-color: var(--select-bg);
+    color: var(--select-text);
+    border: 1px solid var(--select-border);
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.theme-select:hover {
+    border-color: var(--accent-primary);
+}
+
+.theme-select:focus {
+    outline: none;
+    border-color: var(--accent-primary);
+    box-shadow: 0 0 0 2px rgba(55, 181, 254, 0.2);
+}
+
+/* Custom dropdown arrow */
+.theme-switcher::after {
+    content: "";
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid var(--text-secondary);
+    pointer-events: none;
+}
+
+/* Location display for natural theme */
+.theme-location {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    margin-top: 0.5rem;
+    display: none;
+}
+
+.theme-select[value="natural"] ~ .theme-location {
+    display: block;
+}
+
+/* Reset option styling */
+.theme-select option[value="reset"] {
+    border-top: 1px solid var(--border-color);
+    margin-top: 0.5rem;
+    padding-top: 0.5rem;
+}

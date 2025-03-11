@@ -1,0 +1,188 @@
+/* Base structural styles and layouts */
+
+/* Header */
+#main-header {
+    position: sticky;
+    top: 0px;
+    background-color: rgba(var(--secondary-bg-rgb), 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: var(--text-primary);
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--border-color);
+    z-index: 1000;
+}
+
+#main-nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--accent-primary);
+    transition: color 0.3s ease;
+    justify-content: center;
+}
+
+#nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+#nav-menu a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+#nav-menu a:hover {
+    color: var(--accent-primary);
+}
+
+/* Hero section */
+#hero-section {
+    background-color: rgba(var(--secondary-bg-rgb), 0.3);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(5px);
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+#hero-title {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(45deg, var(--shrav-blue), var(--online-purple));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#hero-description {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto 2rem;
+}
+
+#cta-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color: var(--accent-secondary);
+    color: var(--button-text);
+    text-decoration: none;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+#cta-button:hover {
+    background-color: var(--accent-primary);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(55, 181, 254, 0.3);
+}
+
+#cta-button:active {
+    background-color: var(--success-accent);
+    transform: translateY(0);
+}
+
+/* Main content */
+#main-content {
+    width: 100%;
+    background: transparent;
+    padding: 4rem 0;
+}
+
+/* Features grid */
+#features-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 0rem;
+}
+
+#feature-1,
+#feature-2,
+#feature-3 {
+    text-align: center;
+    padding: 2rem;
+    background-color: rgba(var(--secondary-bg-rgb), 0.4);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+#feature-1:hover,
+#feature-2:hover,
+#feature-3:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-primary);
+}
+
+#feature-1:hover::after,
+#feature-2:hover::after,
+#feature-3:hover::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(to right, var(--accent-primary), var(--success-accent));
+}
+
+#feature-1-title,
+#feature-2-title,
+#feature-3-title {
+    margin-bottom: 1rem;
+    color: var(--accent-primary);
+}
+
+#feature-1-description,
+#feature-2-description,
+#feature-3-description {
+    color: var(--text-secondary);
+}
+
+/* Footer */
+#main-footer {
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    color: var(--text-secondary);
+    padding: 2rem 0;
+    text-align: center;
+    border-top: 1px solid var(--border-color);
+}
+
+/* Particles.js Container */
+#particles-js {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+    pointer-events: auto;
+}
+
+/* Global transition styles */
+* {
+    transition-property: background-color, border-color, color, box-shadow, transform;
+    transition-duration: 0.3s;
+    transition-timing-function: ease;
+}

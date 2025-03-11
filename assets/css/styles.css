@@ -1,0 +1,50 @@
+/* Main stylesheet - imports all components */
+
+/* Base styles and layouts */
+@import './base.css';
+
+/* Theme system */
+@import './themes/variables.css';
+@import './themes/light.css';
+/* Future theme imports would go here */
+/* @import 'themes/custom-themes/future-theme.css'; */
+
+/* Component styles */
+@import './components/theme-switcher.css';
+@import './components/location-modal.css';
+
+/* Reset styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    background-color: #000000;
+    min-height: 100vh;
+}
+
+#body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: var(--text-primary);
+    background: transparent;
+    transition: color 0.3s ease;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    #nav-menu {
+        display: none;
+    }
+
+    #hero-title {
+        font-size: 2rem;
+    }
+}
+
+/* Theme selector empty state */
+.theme-select option[value=""] {
+    color: var(--text-secondary);
+}
